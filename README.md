@@ -16,7 +16,7 @@ Tools
 
 * fast-export
 
-Nicolás Alvarez shared that The fast-export tool started at about 500 revs/sec but progressively slowed down. [1]
+Nicolás Alvarez shared that The fast-export tool started at about 500 revs/sec but progressively slowed down [Ref](https://mail.python.org/pipermail/core-workflow/2016-February/000468.html)
 
 * git-remote-hg transport
 
@@ -65,16 +65,11 @@ $ git push github master:master
 $ git push --all github
 ```
 
-
-
 Workflow Suggestions
+====================
 
 * http://www.catb.org/esr/reposurgeon/
 
 
-References
-==========
-
-[1]: https://mail.python.org/pipermail/core-workflow/2016-February/000468.html 
 
 
