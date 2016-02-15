@@ -23,10 +23,23 @@ Nicolás Alvarez shared that The fast-export tool started at about 500 revs/sec 
 Oleg Broytman tried this and shared git-remote-hg provides bidirectional transport. You can continue pulling from
 Mercurial repository(ies) and you can commit and push back to Mercurial repository(ies).
 
+
 * https://import.github.com/
 
 This tool was introduced by Github. I evaluated this tool to do the migration of http://hg.python.org/cpython repo to gihub.
 Unfortunately, it failed at 78% migration. Multiple attempts did not help.  I have raised a ticket with github.com citing unsuccessful migration using their tool.
+
+```
+*Github Response*
+
+(GitHub Staff)
+
+Hi Senthil,
+
+Unfortunately, the repository is too large to migrate using the importer. I'd recommend converting it to git locally using something like hg-fast-export. Due to its size, you'll need to push the local repo to GitHub in chunks.
+
+Thanks for contacting us and have a great week!
+```
 
 * [hg-git](http://hg-git.github.io/)
 
