@@ -45,6 +45,18 @@ Thanks for contacting us and have a great week!
 
 Pierre-Yves David shared that hg-git was used in real world on large sized repositories and works perfectly fine. This led me research this option further.
 
+The export takes around 4 hours
+
+```
+20:31 $ hg push /Users/senthilkumaran/python/trials/git/cpython/
+pushing to /Users/senthilkumaran/python/trials/git/cpython/
+exporting [=========================================================================================================>                                         searching for changes
+adding objects
+added 100300 commits with 314150 trees and 202085 blobs
+✔ ~/python/trials/cpython
+03:05 $
+```
+
 Migrating using hg-git was successful. Some care was required while navigating this territory and for the initial setup.
 
   * Hit https://bitbucket.org/durin42/hg-git/issues/93/pushing-to-empty-repository-on-github
