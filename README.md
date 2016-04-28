@@ -1,88 +1,32 @@
-Task
-====
+### hg to git migration
 
-* Evaluate various hg to git repository conversion options and find out the optimal way to convert Cpython hg repository
-  at http://hg.python.org to a git repository suitable to be hosted at github.
+This repository provides the tool and documents the process involved in migrating the cpython mercurial repository
+to git repo.
 
-Constraints
-===========
+##### hg-git-migrator.py
 
-* [PEP-0512](https://www.python.org/dev/peps/pep-0512) defines the various characteristics of the desirable outcome.
-* We will want to use an external, well tested tool used by other projects for similar conversion.
-
-
-Tools
-=====
-
-* fast-export
-
-Nicolás Alvarez shared that The fast-export tool started at about 500 revs/sec but progressively slowed down [Ref](https://mail.python.org/pipermail/core-workflow/2016-February/000468.html)
-
-* git-remote-hg transport
-
-Oleg Broytman tried this and shared git-remote-hg provides bidirectional transport. You can continue pulling from
-Mercurial repository(ies) and you can commit and push back to Mercurial repository(ies).
-
-
-* https://import.github.com/
-
-This tool was introduced by Github. I evaluated this tool to do the migration of http://hg.python.org/cpython repo to gihub.
-Unfortunately, it failed at 78% migration. Multiple attempts did not help.  I have raised a ticket with github.com citing unsuccessful migration using their tool.
+[hg-git-migrator.py] is a simple tool that can help with migrating any mercurial repository to github. It uses
+mercurial's [hg-git](hg-git.github.io) and automates some steps for easy of use and consistency.
 
 ```
-*Github Response*
-
-(GitHub Staff)
-
-Hi Senthil,
-
-Unfortunately, the repository is too large to migrate using the importer. I'd recommend converting it to git locally using something like hg-fast-export. Due to its size, you'll need to push the local repo to GitHub in chunks.
-
-Thanks for contacting us and have a great week!
+python3.6 hg-git-migrator.py local-mercurial-repository empty-github-url
 ```
 
-* [hg-git](http://hg-git.github.io/)
+>$ python hg-git-migrator.py ~/hg-migration-trials/peps git@github.com:orsenthil/peps.git
+>pushing to /Users/senthilkumaran/hg-migration-trials/git-repo/peps
+>searching for changes
+>adding objects
+>added 6299 commits with 6356 trees and 7459 blobs
+>Migration completed to git_repo: git@github.com:orsenthil/peps.git
 
-Pierre-Yves David shared that hg-git was used in real world on large sized repositories and works perfectly fine. This led me research this option further.
+For a large repo like cpython, the migration took **multiple hours** on a fast machine. It is easier and faster to run
+migration commands directly for a large repo.
 
-Migrating using hg-git was successful. Some care was required while navigating this territory and for the initial setup.
+##### cpython migration.
 
-  * Hit https://bitbucket.org/durin42/hg-git/issues/93/pushing-to-empty-repository-on-github
-    * hg-git migration on empty / initialized repository failed.
-    * hg-git migration on local bare git repository was successful
-  
-  * After migrating to bare git repository, I had to do piecemeal pushes of the initial git repository to github.
-  
-* Pushing the completely repository fails.
-
-```  
-$ git push github master
-Counting objects: 574454, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (572378/572378), done.
-remote: fatal: pack exceeds maximum allowed size
-error: pack-objects died of signal 13
-error: failed to push some refs to 'git@github.com:orsenthil/cpython-hg-git-test-4.git'
-```
-
-* This was resolved by pushing few commits at a time.
-
-```
-$ git push github master~55000:refs/heads/master
-$ git push github master~45000:refs/heads/master
-$ git push github master~35000:refs/heads/master
-$ git push github master~25000:refs/heads/master
-$ git push github master~10000:refs/heads/master
-$ git push github master~5000:refs/heads/master
-$ git push github master:master
-$ git push --all github
-```
-
-Workflow Suggestions
-====================
-
-* http://www.catb.org/esr/reposurgeon/
+[cpython migration document] enlists the steps required to migrate the repo. These are the commands that
+[hg-git-migrator.py] script does it for you.
 
 
-
-
+[hg-git-migrator.py]: https://github.com/orsenthil/cpython-hg-to-git/blob/master/hg-git-migrator.py
+[cpython migration document]: https://github.com/orsenthil/cpython-hg-to-git/blob/master/cpython-migration.md
