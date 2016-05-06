@@ -193,21 +193,32 @@ def git_push_intervals(git_repo_abspath):
     result = execute_with_dir_context(git_repo_abspath, "git rev-list --all --count")
     return get_push_revs(int(result.stdout))
 
+@log
+def git_push_interval_branch(git_repo_abspath, branch):
+    result = execute_with_dir_context(git_repo_abspath, "git rev-list --branches {branch} --count".format(branch=branch))
+    return get_push_revs(int(result.stdout))
+
 
 @log
 def git_add_origin(git_repo_abspath, github_url):
     execute_with_dir_context(git_repo_abspath, "git remote add origin {github_url}".format(github_url=github_url))
 
+"""
+push_intervals = git_push_interval_branch(git_repo_abspath, branch)
+print(push_intervals)
+for rev in push_intervals:
+    execute_with_dir_context(
+	git_repo_abspath,
+	"git push origin {branch}~{rev}:refs/heads/{branch}".format(branch=branch, rev=rev))
+
+ """
+
 
 @log
-def git_push_remote(git_repo_abspath, git_branches, push_intervals):
+def git_push_remote(git_repo_abspath, git_branches, _ignored):
     for branch in git_branches:
-        for rev in push_intervals:
-            execute_with_dir_context(
-                git_repo_abspath,
-                "git push origin {branch}~{rev}:refs/heads/{branch}".format(branch=branch, rev=rev))
-
-    execute_with_dir_context(git_repo_abspath, "git push origin --mirror")
+      execute_with_dir_context(git_repo_abspath, "git push origin {branch}".format(branch=branch))
+      #execute_with_dir_context(git_repo_abspath, "git push origin --mirror")
 
 
 if __name__ == '__main__':
@@ -219,11 +230,11 @@ if __name__ == '__main__':
     git_repo_abspath = os.path.abspath(
             os.path.join(os.path.dirname(hg_repo_abspath), 'git-repo', os.path.basename(hg_repo_abspath)))
 
-    migrate(hg_repo_abspath, git_repo_abspath, delete_existing=True)
+    #migrate(hg_repo_abspath, git_repo_abspath, delete_existing=True)
     git_branches = git_normalize_branches(git_repo_abspath)
     push_intervals = git_push_intervals(git_repo_abspath)
 
-    git_add_origin(git_repo_abspath, args.github_url)
+    #git_add_origin(git_repo_abspath, args.github_url)
     git_push_remote(git_repo_abspath, git_branches, push_intervals)
 
     webbrowser.open(args.github_url)
