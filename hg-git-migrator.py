@@ -180,6 +180,10 @@ def git_push_remote(git_repo_abspath, git_branches):
     for branch in git_branches:
       execute_with_dir_context(git_repo_abspath, "git push origin {branch}".format(branch=branch))
 
+@log
+def git_push_tags(git_repo_abspath):
+    execute_with_dir_context(git_repo_abspath, "git push origin --tags")
+
 
 def check_prerequisites():
     for command in ["git", "hg"]:
@@ -206,5 +210,6 @@ if __name__ == '__main__':
     git_branches = git_normalize_branches(git_repo_abspath)
     git_add_origin(git_repo_abspath, args.github_url)
     git_push_remote(git_repo_abspath, git_branches)
+    git_push_tags(git_repo_abspath)
 
     print("Migration completed to git_repo: {git_url}".format(git_url=args.github_url))
