@@ -185,9 +185,11 @@ def git_push_tags(git_repo_abspath):
     execute_with_dir_context(git_repo_abspath, "git push origin --tags")
 
 
-def check_prerequisites():
+def check_prerequisites(*, require_hg_git_ext=True):
     for command in ["git", "hg"]:
         strict_execute("command -v {cmd}".format(cmd=command))
+    if not require_hg_git_ext:
+        return
     result = execute_process("hg --config extensions.hgext.bookmarks= --config extensions.hggit=  push /tmp/bar")
     if "failed to import extension" in result.stderr:
         print("Pre-Requisite Failure. Please install hg-git (http://hg-git.github.io/) extension for mercurial.")
