@@ -13,10 +13,15 @@ python3.6 hg-git-migrator.py local-mercurial-repository empty-github-url
 ```
 
 >$ python hg-git-migrator.py ~/hg-migration-trials/peps git@github.com:orsenthil/peps.git
+>
 >pushing to /Users/senthilkumaran/hg-migration-trials/git-repo/peps
+>
 >searching for changes
+>
 >adding objects
+>
 >added 6299 commits with 6356 trees and 7459 blobs
+>
 >Migration completed to git_repo: git@github.com:orsenthil/peps.git
 
 For a large repo like cpython, the migration took **multiple hours** on a fast machine. It is easier and faster to run
