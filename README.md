@@ -3,9 +3,9 @@
 This repository provides the tool and documents the process involved in migrating the cpython mercurial repository
 to git repo.
 
-##### hg-git-migrator.py
+##### hg_git_migrator.py
 
-[hg-git-migrator.py] is a simple tool that can help with migrating any mercurial repository to github. It uses
+[hg_git_migrator.py] is a simple tool that can help with migrating any mercurial repository to github. It uses
 mercurial's [hg-git](hg-git.github.io) and automates some steps for easy of use and consistency.
 
 ```
@@ -28,5 +28,5 @@ migration commands directly for a large repo.
 [hg-git-migrator.py] script does it for you.
 
 
-[hg-git-migrator.py]: https://github.com/orsenthil/cpython-hg-to-git/blob/master/hg-git-migrator.py
+[hg-git-migrator.py]: https://github.com/orsenthil/cpython-hg-to-git/blob/master/hg_git_migrator.py
 [cpython migration document]: https://github.com/orsenthil/cpython-hg-to-git/blob/master/cpython-migration.md
