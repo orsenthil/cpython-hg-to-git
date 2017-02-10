@@ -1,626 +1,547 @@
-<pre>[<b>79f3ae389dae</b>]:
--#11904: fix indentation in argparse doc. Noticed by Vladimir Rutsky.
-+<b>bpo-11904</b>: fix indentation in argparse doc. Noticed by Vladimir Rutsky.
+<pre>[<b>28948181fb2f</b>] (unchanged):
+*** empty log message ***
 </pre>
 <hr>
-<pre>[<b>2e9fb59a1484</b>] (unchanged):
-PyUnicode_CHARACTER_SIZE(): add a reference to PyUnicode_KIND_SIZE()
+<pre>[<b>7e1a3133fff2</b>] (unchanged):
+Backport checkin:
+Since PyPI only accepts UTF-8 encoded data now, make sure that the data is
+properly encoded and include the encoding in the Content-Type header.
 </pre>
 <hr>
-<pre>[<b>30efe46f8e3c</b>] (unchanged):
-_PyEval_SliceIndex():  Repaired the comments, and added XXX comments
-about its dubious treatment of NULL (also opened a bug report on that,
-but don't want to risk changing it this late in the 2.2 game).
+<pre>[<b>672adfc5db47</b>] (unchanged):
+Make test_makefile_close a networked test (can't read() from a non-connected
+socket under OS X), and skip it under Windows (where sockets can't be read()
+from using their fds).
 </pre>
 <hr>
-<pre>[<b>2ffd19a224d4</b>]:
--Issue #7466: segmentation fault when the garbage collector is called
-+<b>bpo-7466</b>: segmentation fault when the garbage collector is called
- in the middle of populating a tuple.  Patch by Florent Xicluna.
- 
- (note: no NEWS entry for trunk since the bug was introduced in 2.7/3.1)
+<pre>[<b>6ed381537e6c</b>] (unchanged):
+Merge 3.4 (test_urllib2net)
 </pre>
 <hr>
-<pre>[<b>f627f80201d3</b>]:
- Merged revisions 65397 via svnmerge from
- svn+ssh://pythondev@svn.python.org/sandbox/trunk/2to3/lib2to3
- 
- ........
-   r65397 | collin.winter | 2008-08-01 22:39:06 -0500 (Fri, 01 Aug 2008) | 5 lines
- 
--  Patch #3480 by Nick Edds.
-+  Patch <b>bpo-3480</b> by Nick Edds.
- 
-   Dramatically simplifies the fix_imports pattern, resulting in a reduction of the test_all_fixers runtime from 122+ secs to 59 secs (a good predictor of 2to3 performance).
- ........
+<pre>[<b>7917fd2c4298</b>] (unchanged):
+Add PEP 331; add constancy of None; minor edits
 </pre>
 <hr>
-<pre>[<b>b0efa88c4cf4</b>]:
--Issue #28770: Update python-gdb.py for fastcalls
-+<b>bpo-28770</b>: Update python-gdb.py for fastcalls
- 
- Frame.is_other_python_frame() now also handles _PyCFunction_FastCallDict()
- frames.
- 
- Thanks to the new code to handle fast calls, python-gdb.py is now also able to
- detect the <built-in id method of module ...> frame.
- (grafted from f41d02d7da373ccaff97a42b66b051260bd55996)
+<pre>[<b>7bd335fe4cb6</b>] (unchanged):
+Merged upstream change.
 </pre>
 <hr>
-<pre>[<b>1a9e12a852b2</b>]:
--Issue #28556: merge 5 more typing changes from upstream (#340, #344, #348, #349, #350)
-+<b>bpo-28556</b>: merge 5 more typing changes from upstream (#340, #344, #348, #349, #350)
-</pre>
-<hr>
-<pre>[<b>262130d70306</b>]:
--#7479: add note about function availability on Unices.
-+<b>bpo-7479</b>: add note about function availability on Unices.
-</pre>
-<hr>
-<pre>[<b>383c8907bea0</b>] (unchanged):
-Silence GCC warning about uninitialzed variable.
+<pre>[<b>861cd2278348</b>] (unchanged):
+Convert operator precedence table to the new style markup.
+Added lambda to the table.
+Call "**" exponentiation instead of power.
 
-Simplify formatlong() (by using PyUnicode_FromStringAndSize()).
+{\em ...} --> \emph{...}
 </pre>
 <hr>
-<pre>[<b>76689a706900</b>]:
--Closes #21149: Improved thread-safety in logging cleanup during interpreter shutdown.
-+Closes <b>bpo-21149</b>: Improved thread-safety in logging cleanup during interpreter shutdown.
-</pre>
-<hr>
-<pre>[<b>16a46b6e7054</b>]:
- Fix IMAP.login() to work properly.
--Also, add remote tests for imaplib (part of #4471).
-+Also, add remote tests for imaplib (part of <b>bpo-4471</b>).
-</pre>
-<hr>
-<pre>[<b>610d7d642917</b>] (unchanged):
-Second attempt to fix the ctermid_r/tmpnam_r warnings: define USE_CTERMID_R
-and USE_TMPNAM_R at the top of the file and refer to them later; this
-catches a second reference to 'tmpnam_r' that I didn't spot first time around.
-</pre>
-<hr>
-<pre>[<b>f7d23bca599f</b>]:
--Patch #1454481:  Make thread stack size runtime tunable.
-+Patch <b>bpo-1454481</b>:  Make thread stack size runtime tunable.
+<pre>[<b>f9e22717722d</b>]:
+-Issues #23808, #25911: Trying to fix walk tests on Windows.
++<b>bpo-23808</b>, <b>bpo-25911</b>: Trying to fix walk tests on Windows.
  
- Heavily revised, comprising revisions:
- 46640 - original trunk revision (backed out in r46655)
- 46647 - markup fix (backed out in r46655)
--46692:46918 merged from branch aimacintyre-sf1454481
-+46692:46918 merged from branch aimacintyre-<b>bpo-1454481</b>
- 
- branch tested on buildbots (Windows buildbots had problems
- not related to these changes).
+ On Windows a symlink can has the FILE_ATTRIBUTE_DIRECTORY flag.
 </pre>
 <hr>
-<pre>[<b>9f5fe6b23e59</b>] (unchanged):
-Since the fast_yield branch target was introduced, it appears that most
-tests of "why" against WHY_YIELD became useless.  This patch removes them,
-but assert()s that why != WHY_YIELD everywhere such a test was removed.
-The test suite ran fine under a debug build (i.e., the asserts never
-triggered).
+<pre>[<b>002d8b981128</b>] (unchanged):
+Fixed possible leaks in ElementTree parser.
 </pre>
 <hr>
-<pre>[<b>42741e677338</b>] (unchanged):
-py-cvs merge, better error dialog
+<pre>[<b>74f55f8d8982</b>] (unchanged):
+merge 3.4
 </pre>
 <hr>
-<pre>[<b>4196000789bc</b>] (unchanged):
-(py-electric-colon): don't re-indent the line if it starts in column
-zero
+<pre>[<b>69b26e990eb8</b>]:
+-#5174: fix wrong file closing in example.
++<b>bpo-5174</b>: fix wrong file closing in example.
 </pre>
 <hr>
-<pre>[<b>f4995c63a177</b>] (unchanged):
-fix expandtabs overflow detection to be consistent and not rely on signed overflow
-</pre>
-<hr>
-<pre>[<b>bbd3a8ad7cb7</b>] (unchanged):
-Added USE_APPEARANCE flag.
-</pre>
-<hr>
-<pre>[<b>98cd7b1666fb</b>]:
--Bug #1551427: fix a wrong NULL pointer check in the win32 version
-+<b>bpo-1551427</b>: fix a wrong NULL pointer check in the win32 version
- of os.urandom().
-</pre>
-<hr>
-<pre>[<b>090a50cb2690</b>] (unchanged):
-Added a missing INCREF in pathname().
-</pre>
-<hr>
-<pre>[<b>7da9201bc8b5</b>]:
--SF bug #1012315:  weakref.WeakValueDictionary should override .has_key()
-+SF <b>bpo-1012315</b>:  weakref.WeakValueDictionary should override .has_key()
- 
- * Check the found object for a None value during a contains/has_key
-   lookup.  Perhaps it will help the OP who is likely suffering from an
-   occassional GC or threading object deletion after self.data is checked.
- 
- * Complete the previous patch by removing the unnecessary indirection
-   for weak dict iterators.  Makes the code cleaner and more readable.
-</pre>
-<hr>
-<pre>[<b>a2f2a8bd56f9</b>] (unchanged):
-Don't close the file explicitly.
-</pre>
-<hr>
-<pre>[<b>d18e9d71f369</b>] (unchanged):
-bump to 3.1.3rc1
-</pre>
-<hr>
-<pre>[<b>62a1ed6e636a</b>] (unchanged):
-Blocked revisions 69471 via svnmerge
-
-................
-  r69471 | guilherme.polo | 2009-02-09 18:40:42 -0200 (Mon, 09 Feb 2009) | 17 lines
-
-  Merged revisions 69460,69467,69470 via svnmerge from
-  svn+ssh://pythondev/python/trunk
-
-  ........
-    r69460 | guilherme.polo | 2009-02-09 14:09:17 -0200 (Mon, 09 Feb 2009) | 1 line
-
-    Turned setup_master public
-  ........
-    r69467 | guilherme.polo | 2009-02-09 17:21:21 -0200 (Mon, 09 Feb 2009) | 2 lines
-
-    Some tests for Tkinter.Text.search
-  ........
-    r69470 | guilherme.polo | 2009-02-09 17:57:04 -0200 (Mon, 09 Feb 2009) | 1 line
-
-    Checking for tk availability before continuing (basically the same that is done in test_ttk_guionly)
-  ........
-................
-</pre>
-<hr>
-<pre>[<b>041f89c98c35</b>] (unchanged):
-test_hash():  The test here is different enough from the one in the bug
-report that the stats for expected # of collisions are a little higher.
-Updated comments accordingly.
-</pre>
-<hr>
-<pre>[<b>3fe80ecba874</b>] (unchanged):
-asyncio: Get rid of _try_connected().
-</pre>
-<hr>
-<pre>[<b>6fb3847d39ef</b>] (unchanged):
-Adding unittest.removeHandler function / decorator for removing the signal.SIGINT signal handler. With tests and docs.
-</pre>
-<hr>
-<pre>[<b>79f9063fb58e</b>] (unchanged):
-Fix problem in example code.  It's minor in this particular example,
-but can lead to mysterious problems in real applications.
-</pre>
-<hr>
-<pre>[<b>ff072aa70c1d</b>] (unchanged):
-Prevent ResourceWarnings in test_gettext
-</pre>
-<hr>
-<pre>[<b>f235e8ef0d56</b>] (unchanged):
-bug [ 1007046 ] os.startfile() doesn't accept Unicode filenames
-</pre>
-<hr>
-<pre>[<b>8cc4be648ab4</b>]:
- Merged revisions 84997 via svnmerge from
- svn+ssh://pythondev@svn.python.org/python/branches/py3k
- 
- ........
-   r84997 | antoine.pitrou | 2010-09-24 20:57:01 +0200 (ven., 24 sept. 2010) | 3 lines
- 
--  Make _kill_process more robust under Windows too (see issue #8432)
-+  Make _kill_process more robust under Windows too (see <b>bpo-8432</b>)
- ........
-</pre>
-<hr>
-<pre>[<b>ae08a01f2f2d</b>]:
--Fix typo reported in SF bug #427783.
-+Fix typo reported in SF <b>bpo-427783</b>.
-</pre>
-<hr>
-<pre>[<b>2a43507cd953</b>] (unchanged):
-Merged revisions 59304-59312 via svnmerge from
+<pre>[<b>2f8a362e373d</b>] (unchanged):
+Merged revisions 74209 via svnmerge from
 svn+ssh://pythondev@svn.python.org/python/trunk
 
 ........
-  r59306 | andrew.kuchling | 2007-12-03 13:28:41 -0800 (Mon, 03 Dec 2007) | 1 line
+  r74209 | georg.brandl | 2009-07-26 16:37:28 +0200 (So, 26 Jul 2009) | 1 line
 
-  Grammar fix
-........
-  r59307 | guido.van.rossum | 2007-12-03 14:02:10 -0800 (Mon, 03 Dec 2007) | 2 lines
-
-  Shut up a compiler warning.
-........
-  r59312 | martin.v.loewis | 2007-12-03 15:09:04 -0800 (Mon, 03 Dec 2007) | 3 lines
-
-  Forward-port r59310:
-  os.access now returns True on Windows for any existing directory.
+  builtin -> built-in.
 ........
 </pre>
 <hr>
-<pre>[<b>725d6347ac7e</b>]:
--Issue #17728: Specify default precision for float.format for presentation types e, f, and g.
-+<b>bpo-17728</b>: Specify default precision for float.format for presentation types e, f, and g.
+<pre>[<b>26132370333e</b>] (unchanged):
+merge release tag
 </pre>
 <hr>
-<pre>[<b>eeef2f17a774</b>]:
--#11446: merge with 3.1.
-+<b>bpo-11446</b>: merge with 3.1.
+<pre>[<b>20b65b88e0a0</b>]:
+-#11481: merge with 3.3.
++<b>bpo-11481</b>: merge with 3.3.
 </pre>
 <hr>
-<pre>[<b>44efcdf221f7</b>] (unchanged):
-Merge with 3.3
-</pre>
-<hr>
-<pre>[<b>6b28522197db</b>]:
- Unblocked revisions 76815 via svnmerge
- 
- ................
-   r76815 | mark.dickinson | 2009-12-13 21:10:57 +0000 (Sun, 13 Dec 2009) | 10 lines
- 
-   Merged revisions 76813 via svnmerge from
-   svn+ssh://pythondev@svn.python.org/python/trunk
- 
-   ........
-     r76813 | mark.dickinson | 2009-12-13 21:06:06 +0000 (Sun, 13 Dec 2009) | 3 lines
- 
--    Issue #7492: Autoconf tests were leaving semaphore files behind.  Add
-+    <b>bpo-7492</b>: Autoconf tests were leaving semaphore files behind.  Add
-     sem_unlink calls to delete those semaphore files.
-   ........
- ................
-</pre>
-<hr>
-<pre>[<b>833d3ecfbbf0</b>]:
--Issue #3772: Fixed regression problem in StreamHandler.emit().
-+<b>bpo-3772</b>: Fixed regression problem in StreamHandler.emit().
-</pre>
-<hr>
-<pre>[<b>21531e392116</b>] (unchanged):
-Add HeadURL to the keywords.
-</pre>
-<hr>
-<pre>[<b>83f0a724a87c</b>] (unchanged):
-Add destrpy() method.
-</pre>
-<hr>
-<pre>[<b>7fb013ff014f</b>]:
- Merged revisions 78339 via svnmerge from
- svn+ssh://pythondev@svn.python.org/python/trunk
- 
- ........
-   r78339 | jack.diederich | 2010-02-22 16:27:38 -0500 (Mon, 22 Feb 2010) | 1 line
- 
--  * fix issue#7476
-+  * fix <b>bpo-7476</b>
- ........
-</pre>
-<hr>
-<pre>[<b>2f523ae90e06</b>] (unchanged):
-Provide mechanism to deprecate functions, types, and struct members.
-It would be nice to support other compilers besides gcc.
-</pre>
-<hr>
-<pre>[<b>6293723205a6</b>] (unchanged):
-Use sigaction if possible
-</pre>
-<hr>
-<pre>[<b>dba2faf09906</b>]:
- Merged revisions 69700 via svnmerge from
- svn+ssh://pythondev@svn.python.org/python/trunk
- 
- ........
-   r69700 | tarek.ziade | 2009-02-16 23:38:43 +0100 (Mon, 16 Feb 2009) | 1 line
- 
--  note about #2279
-+  note about <b>bpo-2279</b>
- ........
-</pre>
-<hr>
-<pre>[<b>b949224a4bd5</b>] (unchanged):
-Initial revision
-</pre>
-<hr>
-<pre>[<b>f352ea4dff70</b>] (unchanged):
-Initial revision
-</pre>
-<hr>
-<pre>[<b>7aee0fe6ae5d</b>]:
--Port #11488 patch from 3.1 (changeset f816841bab03)
-+Port <b>bpo-11488</b> patch from 3.1 (changeset f816841bab03)
-</pre>
-<hr>
-<pre>[<b>2b597e03f7f4</b>]:
--Issue #22836: Merge exception reporting from 3.5
-+<b>bpo-22836</b>: Merge exception reporting from 3.5
-</pre>
-<hr>
-<pre>[<b>c126bd9b505b</b>]:
--#1506171: added operator.methodcaller().
-+<b>bpo-1506171</b>: added operator.methodcaller().
-</pre>
-<hr>
-<pre>[<b>3c0913b65e8d</b>] (unchanged):
-Closing the HTTP connection after each test, and listening more.
-</pre>
-<hr>
-<pre>[<b>83502e31e06e</b>] (unchanged):
-wininst.exe is no longer used - we now need wininst-6.exe or wininst-7.1.exe.
-</pre>
-<hr>
-<pre>[<b>fd412a00a07d</b>]:
--Patch #1446489	(zipfile: support for ZIP64)
-+Patch <b>bpo-1446489</b>	(zipfile: support for ZIP64)
-</pre>
-<hr>
-<pre>[<b>1d80d84c7792</b>]:
--Patch #1581073: add a flag to textwrap that prevents the dropping of
-+Patch <b>bpo-1581073</b>: add a flag to textwrap that prevents the dropping of
- whitespace while wrapping.
-</pre>
-<hr>
-<pre>[<b>c6679b1c6cfc</b>] (unchanged):
-Correctly document PyNumber_Coerce.
-</pre>
-<hr>
-<pre>[<b>5d32b6afb52e</b>] (unchanged):
-Merged revisions 82152 via svnmerge from
-svn+ssh://pythondev@svn.python.org/python/branches/py3k
-
-........
-  r82152 | alexander.belopolsky | 2010-06-22 10:07:33 -0400 (Tue, 22 Jun 2010) | 1 line
-
-  Added more test cases
-........
-</pre>
-<hr>
-<pre>[<b>01e1d6abc501</b>]:
--My patch #597221.  Use f_lasti more consistently.
-+My patch <b>bpo-597221</b>.  Use f_lasti more consistently.
-</pre>
-<hr>
-<pre>[<b>8ecd1bad2408</b>] (unchanged):
-Use linecache for loading source code.  Closes SF patch 490374.
-</pre>
-<hr>
-<pre>[<b>2a4e3c9285b5</b>]:
--[Bug #436732] install.py does not record a created *.pth file in the
-+[<b>bpo-436732</b>] install.py does not record a created *.pth file in the
-    INSTALLED_FILES output.  Modified version of a patch from
-    Jon Nelson (jnelson)
-</pre>
-<hr>
-<pre>[<b>d1e2f794d020</b>]:
--#7712: add a temp_cwd context manager to test_support and use it in regrtest to run all the tests in a temporary directory, saving the original CWD in test_support.SAVEDCWD. Thanks to Florent Xicluna who helped with the patch.
-+<b>bpo-7712</b>: add a temp_cwd context manager to test_support and use it in regrtest to run all the tests in a temporary directory, saving the original CWD in test_support.SAVEDCWD. Thanks to Florent Xicluna who helped with the patch.
-</pre>
-<hr>
-<pre>[<b>b6c3fc21286f</b>]:
--Merge #20206, #5803: more efficient algorithm that doesn't truncate output.
-+Merge <b>bpo-20206</b>, <b>bpo-5803</b>: more efficient algorithm that doesn't truncate output.
- 
- (No idea why test_tarfile is listed as changed...it isn't.)
-</pre>
-<hr>
-<pre>[<b>5772c4983dd8</b>] (unchanged):
-In readme.txt, make what's needed to build the "optional" subprojects
-much more explicit.  Also document that we're moving to Tcl/Tk 8.3.2.
-Simplify .dsp files by getting rid of useless include paths.
-.wse file changed to reflect that my setup is different than Guido's:
-if you *build* a Python distro using python20.wse, beware!
-</pre>
-<hr>
-<pre>[<b>24d22eee94cf</b>] (unchanged):
-Back out the requirement to supply a version number
-</pre>
-<hr>
-<pre>[<b>10823e7be085</b>]:
--#13295: http.server now produces valid HTML 4.01 strict.
-+<b>bpo-13295</b>: http.server now produces valid HTML 4.01 strict.
-</pre>
-<hr>
-<pre>[<b>71532ad7f3ed</b>] (unchanged):
-fix print syntax in tutorial
-</pre>
-<hr>
-<pre>[<b>0f0c5f9ace9f</b>] (unchanged):
-Fix some grammar and typos
-</pre>
-<hr>
-<pre>[<b>82656e28b5e5</b>] (unchanged):
-Release bump for Python 3.5.0a3.
-</pre>
-<hr>
-<pre>[<b>c11fe2e2984d</b>] (unchanged):
-The "with" statement needs a __future__.  :)
-</pre>
-<hr>
-<pre>[<b>033b409f7cd6</b>] (unchanged):
-PyTuple_Pack() was missing va_end() in its error branch which lead to a resource leak.
-</pre>
-<hr>
-<pre>[<b>db9b64939d45</b>]:
--Backport checkin: Fix typo (from SF bug #1086127).
-+Backport checkin: Fix typo (from SF <b>bpo-1086127</b>).
-</pre>
-<hr>
-<pre>[<b>6fa0ebfdc136</b>]:
--fix possible overflow in encode_basestring_ascii (#23369)
-+fix possible overflow in encode_basestring_ascii (<b>bpo-23369</b>)
-</pre>
-<hr>
-<pre>[<b>a66524ce9551</b>]:
--Issue #21207: Detect when the os.urandom cached fd has been closed or replaced, and open it anew.
-+<b>bpo-21207</b>: Detect when the os.urandom cached fd has been closed or replaced, and open it anew.
-</pre>
-<hr>
-<pre>[<b>a2bb50ffdff3</b>]:
--#3077: fix h2py substitution of character literals.
-+<b>bpo-3077</b>: fix h2py substitution of character literals.
-</pre>
-<hr>
-<pre>[<b>6a599249e8b7</b>]:
--Issue #5202: Added support for unseekable files in the wave module.
-+<b>bpo-5202</b>: Added support for unseekable files in the wave module.
-</pre>
-<hr>
-<pre>[<b>b8eed7a56a8c</b>] (unchanged):
-Update the unittest section.
-</pre>
-<hr>
-<pre>[<b>39dac0a8896a</b>] (unchanged):
-Recorded merge of revisions 84187 via svnmerge from
-svn+ssh://pythondev@svn.python.org/python/branches/py3k
-
-........
-  r84187 | eric.araujo | 2010-08-19 00:29:54 +0200 (jeu., 19 août 2010) | 2 lines
-
-  Fix indentation level
-........
-</pre>
-<hr>
-<pre>[<b>7fc704cca181</b>]:
--Backport fix for SF #640094, on win32 getpass runs into unix_getpass
-+Backport fix for <b>bpo-640094</b>, on win32 getpass runs into unix_getpass
- 
- Make sure we have a UNIX-compatible termios.
- Apparently, McMillan Installer made a termios on windows
- which caused unix_getpass to be used instead of win_getpass
-</pre>
-<hr>
-<pre>[<b>59ec0b9ff724</b>] (unchanged):
-Fix null pointer dereferencing in structmember.c PyMember_SetOne() for T_CHAR. _PyUnicode_AsStringAndSize() can return NULL without touching the len argument. Also remove unnecessary PyUnicode_Check(), _PyUnicode_AsStringAndSize() performance the test again. CID 486815
-</pre>
-<hr>
-<pre>[<b>36c277381d78</b>] (unchanged):
-Remove __floordiv__ test, as it's deprecated.
-</pre>
-<hr>
-<pre>[<b>f183f1189824</b>] (unchanged):
-Fixed multiple reinitialization of the Python interpreter. The small int list in longobject.c has caused a seg fault during the third finalization.
-</pre>
-<hr>
-<pre>[<b>2d30c35feebe</b>] (unchanged):
-Improve the test output a bit.
-</pre>
-<hr>
-<pre>[<b>d3f9a6d7f6e4</b>]:
--Issue #9696: Fix exception incorrectly raised by xdrlib.Packer.pack_int when trying to pack a negative (in-range) integer.
-+<b>bpo-9696</b>: Fix exception incorrectly raised by xdrlib.Packer.pack_int when trying to pack a negative (in-range) integer.
-</pre>
-<hr>
-<pre>[<b>378893423552</b>] (unchanged):
-Version bump for 3.6.0a2
-</pre>
-<hr>
-<pre>[<b>0afd760e7c76</b>] (unchanged):
-Merged revisions 82146 via svnmerge from
-svn+ssh://pythondev@svn.python.org/python/branches/py3k
-
-........
-  r82146 | senthil.kumaran | 2010-06-22 08:12:52 +0530 (Tue, 22 Jun 2010) | 3 lines
-
-  Minor docs issue.
-........
-</pre>
-<hr>
-<pre>[<b>acf3e24dd0d0</b>] (unchanged):
-Bump version.
-</pre>
-<hr>
-<pre>[<b>1b72d0e4f4aa</b>] (unchanged):
-Revert r42719, because the isinstance() check wasn't redundant; formatting a
-string exception was causing a TypeError.
-</pre>
-<hr>
-<pre>[<b>40631ae74b17</b>]:
--Patch #477750: Use METH_ constants in Modules.
-+Patch <b>bpo-477750</b>: Use METH_ constants in Modules.
-</pre>
-<hr>
-<pre>[<b>5939b50429a0</b>] (unchanged):
-Merge heads.
-</pre>
-<hr>
-<pre>[<b>bf536b46d7f2</b>]:
--Issue #11836: document and expose multiprocessing.SimpleQueue
-+<b>bpo-11836</b>: document and expose multiprocessing.SimpleQueue
-</pre>
-<hr>
-<pre>[<b>a45c86f5ba96</b>] (unchanged):
-Fixed _sys_home computation and added diagnostics for Windows buildbot failures.
-</pre>
-<hr>
-<pre>[<b>1c90a1cf795c</b>] (unchanged):
-Make error messages clearer for illegal combinations of nested
-functions and import */exec.
-</pre>
-<hr>
-<pre>[<b>19443585cccc</b>] (unchanged):
-Add new section "What About Python 1.6?"
-Document some things in the 2.0 NEWS files that should be mentioned here.
-</pre>
-<hr>
-<pre>[<b>d54da9248ed9</b>]:
- Merged revisions 83993 via svnmerge from
- svn+ssh://pythondev@svn.python.org/python/branches/py3k
- 
- ........
-   r83993 | eric.araujo | 2010-08-14 04:30:34 +0200 (sam., 14 août 2010) | 2 lines
- 
--  Use a marker in generated MANIFEST files, don't touch files without it. Fixes #8688.
-+  Use a marker in generated MANIFEST files, don't touch files without it. Fixes <b>bpo-8688</b>.
- ........
-</pre>
-<hr>
-<pre>[<b>c5e206b9df2e</b>]:
--Close #18990: remove root attribute from XMLPullParser
-+Close <b>bpo-18990</b>: remove root attribute from XMLPullParser
- 
- - this was an internal implementation detail for iterparse
- - this has been changed to use a new private method instead
- - XMLPullParser.close docs are now more explicit about not
-   returning a root element and instead direct users towards
-   read_events
- - also added missing docstrings and clarified some details
-   related to exactly *when* events are consumed from the
-   internal queue
- 
- (Initial patch by Stefan Behnel)
-</pre>
-<hr>
-<pre>[<b>d5027e489c25</b>]:
--Closes #11807: document argparse add_subparsers method better.
-+Closes <b>bpo-11807</b>: document argparse add_subparsers method better.
- 
- Patch by Filip Gruszczyński.
-</pre>
-<hr>
-<pre>[<b>6a15845142ec</b>]:
--Issue21160: Correct comments in nturl2path.  Patch by Jurko Gospodnetić.
-+<b>bpo-21160</b>: Correct comments in nturl2path.  Patch by Jurko Gospodnetić.
-</pre>
-<hr>
-<pre>[<b>45a2bbf6c752</b>] (unchanged):
-importlib.__import__() now raises ValueError when level < 0.
-This is to bring it more in line with what PEP 328 set out to do with
-removing ambiguous absolute/relative import semantics.
-</pre>
-<hr>
-<pre>[<b>b6d1aa14c419</b>] (unchanged):
-Merge.
-</pre>
-<hr>
-<pre>[<b>7f36f96b6c76</b>] (unchanged):
-Update the pcbuild8 solution.  Straightened out the _ctypes project by using a .vsproj file and a masm64.rules file to avoid redundancy
-</pre>
-<hr>
-<pre>[<b>4bf99ef06d38</b>] (unchanged):
+<pre>[<b>b1a84233d855</b>] (unchanged):
 Whitespace normalization.
 </pre>
 <hr>
-<pre>[<b>dfbd6e00dd38</b>] (unchanged):
-#stylistics
+<pre>[<b>50330d18d1cd</b>] (unchanged):
+Make dict.keys() and dict.items() comparable to sets, using == and !=.
+(PEP 3106 requires subset comparisons too, those will come later if someone
+really wants them. :-)
+</pre>
+<hr>
+<pre>[<b>3b8e2e892275</b>] (unchanged):
+Fix markup.
+</pre>
+<hr>
+<pre>[<b>a8818ffe24d1</b>] (unchanged):
+Patch 1318 by Christian Heimes: remove os.tmpnam(), os.tempnam(),
+and os.tmpfile().
+</pre>
+<hr>
+<pre>[<b>77b01c933308</b>] (unchanged):
+Try to narrow window of failure on slow/busy boxes (ppc64 buildbot)
+</pre>
+<hr>
+<pre>[<b>4bfc8c519b6d</b>] (unchanged):
+indicate that 'b' is added to the mode flag if not given
+</pre>
+<hr>
+<pre>[<b>53e8ebd11620</b>] (unchanged):
+Macintosh compatibility.
+</pre>
+<hr>
+<pre>[<b>fd434beb5f56</b>] (unchanged):
+Created a minimal MacOSX section.
+</pre>
+<hr>
+<pre>[<b>aba4404f5d9f</b>] (unchanged):
+let's get cracking on 3.1a2!
+</pre>
+<hr>
+<pre>[<b>5133fee2433e</b>]:
+-(merge 3.2) Issue #12467: warnings: fix a race condition if a warning is
++(merge 3.2) <b>bpo-12467</b>: warnings: fix a race condition if a warning is
+ emitted at shutdown, if globals()['__file__'] is None.
+</pre>
+<hr>
+<pre>[<b>5fddf795de2c</b>] (unchanged):
+Fix XML vulnerability link targets.
+</pre>
+<hr>
+<pre>[<b>df2326a4894d</b>] (unchanged):
+Inline fast_cfunction() in new call_function().
+
+Also, don't handle METH_OLDARGS on the fast path.  All the interesting
+builtins have been converted to use METH_NOARGS, METH_O, or
+METH_VARARGS.
+
+Result is another 1-2% speedup.  If I can cobble together 10 of these,
+it might make a difference.
+</pre>
+<hr>
+<pre>[<b>5fafcb32f062</b>]:
+-Issue #6274. Fixed a potential FD leak in subprocess.py.
++<b>bpo-6274</b>. Fixed a potential FD leak in subprocess.py.
+</pre>
+<hr>
+<pre>[<b>3017e794bbb9</b>] (unchanged):
+Revert bogus disabling of Tcl and Tk.
+</pre>
+<hr>
+<pre>[<b>308b216f084f</b>] (unchanged):
+Merge heads.
+</pre>
+<hr>
+<pre>[<b>010e7b69d86b</b>] (unchanged):
+Patch by Jeffrey Chang to add docstrings everywhere.
+The text is condensed from the library manual.
+</pre>
+<hr>
+<pre>[<b>015f051297c5</b>] (unchanged):
+Synchronize maintainers.rst
+</pre>
+<hr>
+<pre>[<b>c3b28ba918f8</b>] (unchanged):
+Commit version bump.
+</pre>
+<hr>
+<pre>[<b>b99578b878ce</b>] (unchanged):
+AttrDialog.py: some structural changes
+listtree.py: "Print" -> "List" in description
+</pre>
+<hr>
+<pre>[<b>813daee94f73</b>]:
+ Merged revisions 80784 via svnmerge from
+ svn+ssh://pythondev@svn.python.org/python/trunk
+ 
+ ........
+   r80784 | ronald.oussoren | 2010-05-05 16:48:37 +0200 (Wed, 05 May 2010) | 9 lines
+ 
+   The C function used by uuid.uuid4 is broken on
+   OSX 10.6 in that after os.fork() the parent and
+   child generate the same sequence of UUIDs.
+ 
+   This patch falls back to the the Python implementation
+   on OSX 10.6 or later.
+ 
+-  Fixes issue #8621.
++  Fixes <b>bpo-8621</b>.
+ ........
+</pre>
+<hr>
+<pre>[<b>90bc4b367fcb</b>] (unchanged):
+Added tag v3.3.0a2 for changeset 2f69db52d6de
+</pre>
+<hr>
+<pre>[<b>85f1a94af374</b>] (unchanged):
+- object is a class type, not a function
+- when marking a function, the trailing () should be included
+  consistently
+</pre>
+<hr>
+<pre>[<b>4d34129dd882</b>] (unchanged):
+run autoreconf
+</pre>
+<hr>
+<pre>[<b>de50934e1145</b>] (unchanged):
+Must declare vrbls at the tops of blocks in C89 (wouldn't compile).
+</pre>
+<hr>
+<pre>[<b>2eea364c2863</b>]:
+-Issue #23248: Update ssl error codes from latest OpenSSL git master.
++<b>bpo-23248</b>: Update ssl error codes from latest OpenSSL git master.
+</pre>
+<hr>
+<pre>[<b>6846f95f8e07</b>]:
+-Issue #6150: Fix test_unicode on wide-unicode builds.
++<b>bpo-6150</b>: Fix test_unicode on wide-unicode builds.
+</pre>
+<hr>
+<pre>[<b>86b59ac81111</b>] (unchanged):
+Merge with 3.4
+</pre>
+<hr>
+<pre>[<b>5a6d4fc4224f</b>] (unchanged):
+Added more f-string test for empty expressions.
+</pre>
+<hr>
+<pre>[<b>977e7a7e155a</b>] (unchanged):
+Update contextlib documentation to use the same terminology as the module implementation
+</pre>
+<hr>
+<pre>[<b>b360a650a0db</b>] (unchanged):
+Add namespace selection for rlcompleter.  Closes SF patch 490026.
+</pre>
+<hr>
+<pre>[<b>763eb47975dd</b>] (unchanged):
+moved some stuff to Tools; added some descriptions
+</pre>
+<hr>
+<pre>[<b>83c131dfdd84</b>] (unchanged):
+Idiom adjustment in the docs for the parser module.
+</pre>
+<hr>
+<pre>[<b>af86b89ce784</b>] (unchanged):
+Eliminate outdated usages of PyInt_GetMax.
+</pre>
+<hr>
+<pre>[<b>76a85752d452</b>] (unchanged):
+Add a new option, --dvips-safe, which sets the $DVIPS_SAFE option in
+LaTeX2HTML.  This is not safe to do in general (for the reasons LaTeX2HTML
+protects against dvips to begin with), but is safe if we do not actually
+need to run dvips.  Note that we also assume it is safe if the user
+specifically requests PostScript generation.  See the comments for further
+explanation.
+</pre>
+<hr>
+<pre>[<b>28d93c9c3a03</b>] (unchanged):
+patch up multiprocessing until it's API can be changed too
+</pre>
+<hr>
+<pre>[<b>a8facac493ef</b>] (unchanged):
+in scan_once, prevent the reading of arbitrary memory when passed a negative index
+
+Bug reported by Guido Vranken.
+</pre>
+<hr>
+<pre>[<b>3dde95d1ddfb</b>] (unchanged):
+Fixes handling of long values of PYTHONPATH on Windows.
+</pre>
+<hr>
+<pre>[<b>5b1a2fb864a7</b>] (unchanged):
+backport bug [ 728515 ] mmap's resize method resizes the file in win32 but not unix
+</pre>
+<hr>
+<pre>[<b>405a5b4f453b</b>] (unchanged):
+Backport 1.160 on looping idioms.  Excludes enumerate(), a Py2.3 feature.
+</pre>
+<hr>
+<pre>[<b>ed3e66f30837</b>] (unchanged):
+* Remove exc_info() kludge -- it actually messed up the Jython output
+* Fixed TestLoader.loadTestsFromName() for nested packages
+* Corrected the command-line usage summary
+</pre>
+<hr>
+<pre>[<b>ddb4e0d865d1</b>] (unchanged):
+Fix tag references in 2.6 branch.
+</pre>
+<hr>
+<pre>[<b>06d122b4bffd</b>]:
+-Fixed bug #1628
++Fixed <b>bpo-1628</b>
+ The detection now works on Unix with Makefile, Makefile with VPATH and on Windows.
+</pre>
+<hr>
+<pre>[<b>5c730d30ffbc</b>]:
+-reduce memory usage of test (closes #23369)
++reduce memory usage of test (closes <b>bpo-23369</b>)
+</pre>
+<hr>
+<pre>[<b>e6b3e696dbce</b>] (unchanged):
+Delete out-of-date and little-known README from the test
+directory by consensus of devs at pycon sprint.
+</pre>
+<hr>
+<pre>[<b>201fa77cef98</b>] (unchanged):
+Fix printing out error message when test fails and run with -bb
+</pre>
+<hr>
+<pre>[<b>412d0eb5d4ba</b>] (unchanged):
+exceptions was missing from the module list. Added.
+</pre>
+<hr>
+<pre>[<b>5ed1db00dc59</b>] (unchanged):
+Revert unintended part of the commit (the key==dummy test wasn't supposed to change).
+</pre>
+<hr>
+<pre>[<b>a3e48273dce3</b>]:
+-Fixes #10860: Handle empty port after port delimiter in httplib
++Fixes <b>bpo-10860</b>: Handle empty port after port delimiter in httplib
+ 
+ Thanks, Shawn Ligocki!
+ 
+ 3.x version will come as a separate patch.
+</pre>
+<hr>
+<pre>[<b>653749003db9</b>] (unchanged):
+Fixed error in explanation of codec decode_func pointed out by Gregg Hauser,
+   and rewrote paragraph a bit.
+</pre>
+<hr>
+<pre>[<b>5c151d958fc1</b>] (unchanged):
+Replace rare tabs with 4 spaces, assuming that's what was intended.
+</pre>
+<hr>
+<pre>[<b>a48e608ba605</b>] (unchanged):
+Do not use the default namespace for attributes.
+Fixes http://bugs.debian.org/229885
+</pre>
+<hr>
+<pre>[<b>9574fed93688</b>] (unchanged):
+Blocked revisions 64508 via svnmerge
+
+........
+  r64508 | mark.dickinson | 2008-06-24 16:35:14 +0100 (Tue, 24 Jun 2008) | 2 lines
+
+  Remove references to Py3k in __floor__, __ceil__ and __round__ documentation.
+........
+</pre>
+<hr>
+<pre>[<b>1d0f416d4ba6</b>] (unchanged):
+Silence compiler warning
+</pre>
+<hr>
+<pre>[<b>36095aa6dd5e</b>]:
+-Issue #25225: add revised .html.
++<b>bpo-25225</b>: add revised .html.
+</pre>
+<hr>
+<pre>[<b>e6e81dcebfde</b>] (unchanged):
+The weakref support in PyObject_InitVar() as well; this should have come out
+at the same time as it did from PyObject_Init() .
+</pre>
+<hr>
+<pre>[<b>089fd710dca8</b>] (unchanged):
+Merged revisions 82732,82734,82738 via svnmerge from
+svn+ssh://pythondev@svn.python.org/python/branches/release27-maint
+
+................
+  r82732 | r.david.murray | 2010-07-09 09:16:00 -0400 (Fri, 09 Jul 2010) | 13 lines
+
+  Merged revisions 82730 via svnmerge from
+  svn+ssh://pythondev@svn.python.org/python/branches/py3k
+
+  'merge' in the sense that this is the same fix by the same author.
+
+  ........
+    r82730 | r.david.murray | 2010-07-09 08:23:21 -0400 (Fri, 09 Jul 2010) | 4 lines
+
+    7846: limit fnmatch pattern cache to _MAXCACHE=100 entries.
+
+    Patch by Andrew Clegg.
+  ........
+................
+  r82734 | r.david.murray | 2010-07-09 09:17:45 -0400 (Fri, 09 Jul 2010) | 9 lines
+
+  Merged revisions 82731 via svnmerge from
+  svn+ssh://pythondev@svn.python.org/python/branches/py3k
+
+  ........
+    r82731 | r.david.murray | 2010-07-09 09:14:03 -0400 (Fri, 09 Jul 2010) | 2 lines
+
+    Fix sort order mistake in Misc/ACKS.
+  ........
+................
+  r82738 | r.david.murray | 2010-07-09 09:25:56 -0400 (Fri, 09 Jul 2010) | 2 lines
+
+  Add missing NEWS entry for 7646.
+................
+</pre>
+<hr>
+<pre>[<b>e9e86ae5f5a4</b>] (unchanged):
+small nits and new files
+</pre>
+<hr>
+<pre>[<b>83377fc298d8</b>] (unchanged):
+Jack Jansen, Mac patch:
+
+Include limits.h if we have it.
+</pre>
+<hr>
+<pre>[<b>3d523dbc99be</b>] (unchanged):
+hardcode some resources, removing annoying Widgets.rsrc dependency
+</pre>
+<hr>
+<pre>[<b>9d26379db328</b>] (unchanged):
+(Merge 3.3) Parser/asdl_c.py: use Py_CLEAR()
+</pre>
+<hr>
+<pre>[<b>9c2d919014d0</b>] (unchanged):
+take into account shebang line change
+</pre>
+<hr>
+<pre>[<b>86b8a0576386</b>] (unchanged):
+Null merge.
+</pre>
+<hr>
+<pre>[<b>0325eca1927e</b>]:
+-Issue #25622: Rename to PythonValuesTestCase and enable for non-Windows
++<b>bpo-25622</b>: Rename to PythonValuesTestCase and enable for non-Windows
+</pre>
+<hr>
+<pre>[<b>7f4c9cfae20c</b>] (unchanged):
+require C99 bool
+</pre>
+<hr>
+<pre>[<b>d9474c0445ba</b>]:
+-Try linking the major/minor test program. Fixes #634444.
++Try linking the major/minor test program. Fixes <b>bpo-634444</b>.
+</pre>
+<hr>
+<pre>[<b>2db29939580d</b>] (unchanged):
+Synchronize with 1.10 of PyXML: Close parser when done.
+</pre>
+<hr>
+<pre>[<b>5f690bf172b9</b>] (unchanged):
+let PySequence_Check me a link; thanks to tomo cocoa from docs@
+</pre>
+<hr>
+<pre>[<b>3fa9538ac496</b>]:
+-SF bug #835457:  Small typo in logging documentation
++<b>bpo-835457</b>:  Small typo in logging documentation
+</pre>
+<hr>
+<pre>[<b>8d7bde14d7a4</b>]:
+-Merge from 3.5 for issue #26664
++Merge from 3.5 for <b>bpo-26664</b>
+</pre>
+<hr>
+<pre>[<b>a77a2d7ced7d</b>]:
+-#7293: distutils.test_msvc9compiler now uses a key that exists on any fresh windows install
++<b>bpo-7293</b>: distutils.test_msvc9compiler now uses a key that exists on any fresh windows install
+</pre>
+<hr>
+<pre>[<b>13db5b7de0dd</b>] (unchanged):
+Leading "C:" no longer hardcoded in the default installation directory.
+After removing that, two testers on machines where C: is not the system
+drive reported that the installer suggested their system drive instead
+of C:, and that's what they wanted it to do.
+</pre>
+<hr>
+<pre>[<b>35a99eccaca6</b>] (unchanged):
+C89 compliance.
+</pre>
+<hr>
+<pre>[<b>b4889f106c3b</b>] (unchanged):
+Add libdbhash.tex.
+</pre>
+<hr>
+<pre>[<b>db09d760b965</b>]:
+-fix parsing reST with code or code-block directives (closes #23063)
++fix parsing reST with code or code-block directives (closes <b>bpo-23063</b>)
+ 
+ Patch by Marc Abramowitz.
+</pre>
+<hr>
+<pre>[<b>95c0710ed0d9</b>] (unchanged):
+Merge 3.5 (asyncio)
+</pre>
+<hr>
+<pre>[<b>c30c584cc6aa</b>]:
+ Backport checkin:
+-Replace C++ comment with C comment (fixes SF bug #1593525).
++Replace C++ comment with C comment (fixes <b>bpo-1593525</b>).
+</pre>
+<hr>
+<pre>[<b>af18b150065e</b>] (unchanged):
+Merge 3.1 (empty merge, a similar patch was already applied)
+</pre>
+<hr>
+<pre>[<b>9c05ff6fb0a4</b>] (unchanged):
+Changes necessary for AIX.
+</pre>
+<hr>
+<pre>[<b>ba1eb9860649</b>] (unchanged):
+Add Misc/NEWS entry for c741ba9e37ef.
+</pre>
+<hr>
+<pre>[<b>0ea729cc2a0b</b>] (unchanged):
+if the kind of the string to count is larger than the string to search, shortcut to 0
+</pre>
+<hr>
+<pre>[<b>f3a8f6036567</b>] (unchanged):
+Removed compiler warning about wanting explicit grouping around &&
+expression next to a || expression; this is a readability-inspired
+warning from GCC.
+</pre>
+<hr>
+<pre>[<b>4aa2a20ac335</b>]:
+ Merged revisions 84878 via svnmerge from
+ svn+ssh://pythondev@svn.python.org/python/branches/py3k
+ 
+ ........
+   r84878 | antoine.pitrou | 2010-09-18 19:56:02 +0200 (sam., 18 sept. 2010) | 5 lines
+ 
+-  Issue #9894: Do not hardcode ENOENT in test_subprocess.
++  <b>bpo-9894</b>: Do not hardcode ENOENT in test_subprocess.
+ 
+   (GNU/Hurd is not dead)
+ ........
+</pre>
+<hr>
+<pre>[<b>c3a510b22218</b>]:
+-check the return value of new_string() (closes #18470)
++check the return value of new_string() (closes <b>bpo-18470</b>)
+</pre>
+<hr>
+<pre>[<b>784f372d701a</b>]:
+-fix importing one char extension modules (closes #24328)
++fix importing one char extension modules (closes <b>bpo-24328</b>)
+</pre>
+<hr>
+<pre>[<b>c01d2272e6c3</b>] (unchanged):
+Backport:
+mwh pointed out _Filemodule.c is generated. So to fix the memory leak
+this file (the source) must be fixed.
+</pre>
+<hr>
+<pre>[<b>6b42920accc9</b>] (unchanged):
+Per discussion on python-dev, remove CO_GENERATOR_ALLOWED.  Leave comment about not removing yet.
 </pre>
 <hr>
 <pre>[<b>794dad4b849f</b>]:
@@ -663,7 +584,7 @@ Whitespace normalization.
 <hr>
 <pre>[<b>e8940d4cd8ca</b>]:
 -Fix SF bug #622831 (I think): add unicode_whitespace_trans class
-+Fix SF <b>bpo-622831</b> (I think): add unicode_whitespace_trans class
++Fix <b>bpo-622831</b> (I think): add unicode_whitespace_trans class
  attribute, and modify _munge_whitespace() to recognize Unicode strings
  and use unicode_whitespace_trans to munge them.  Still need to add a
  test to make sure I've really fixed the bug.
@@ -733,7 +654,7 @@ Forward port candidate.
   * Fixed a bug in the compatibility interface set_location() method
     where it would not properly search to the next nearest key when
 -   used on BTree databases.  [SF bug id 788421]
-+   used on BTree databases.  [SF <b>bpo-788421</b>]
++   used on BTree databases.  [<b>bpo-788421</b>]
   * Fixed a bug in the compatibility interface set_location() method
     where it could crash when looking up keys in a hash or recno
     format database due to an incorrect free().
@@ -741,13 +662,13 @@ Forward port candidate.
 <hr>
 <pre>[<b>a6bcf4df1a85</b>]:
 -fix bug related to SF bug id 788421 where DBC.set_range() could call
-+fix bug related to SF <b>bpo-788421</b> where DBC.set_range() could call
++fix bug related to <b>bpo-788421</b> where DBC.set_range() could call
  free() on something it did not allocate for non B-Tree based databases.
 </pre>
 <hr>
 <pre>[<b>a74b463bf76d</b>]:
 -SF 798269:  bug fix for doctest (sf bug id: 798254
-+<b>bpo-798269</b>:  bug fix for doctest (sf bug id: 798254
++<b>bpo-798269</b>:  bug fix for doctest (<b>bpo-798254</b>
  (Contributed by Alexander Belopolsky.)
  
  Doctest would crash when encountering unbound methods:
@@ -1391,7 +1312,7 @@ Forward port candidate.
 <pre>[<b>0e8077cb3dd5</b>]:
  ConfigParser.items() and SafeConfigParser.items() no longer return a
 -generator.  See SF bug #818861.
-+generator.  See SF <b>bpo-818861</b>.
++generator.  See <b>bpo-818861</b>.
 </pre>
 <hr>
 <pre>[<b>04f2801d9977</b>]:
@@ -1433,7 +1354,7 @@ Forward port candidate.
 <hr>
 <pre>[<b>e8940d4cd8ca</b>]:
 -Fix SF bug #622831 (I think): add unicode_whitespace_trans class
-+Fix SF <b>bpo-622831</b> (I think): add unicode_whitespace_trans class
++Fix <b>bpo-622831</b> (I think): add unicode_whitespace_trans class
  attribute, and modify _munge_whitespace() to recognize Unicode strings
  and use unicode_whitespace_trans to munge them.  Still need to add a
  test to make sure I've really fixed the bug.
@@ -1477,6 +1398,6 @@ test case for pybsddb SF bug id 1215432
  Refer reader to platform library docs for specific semantics.
  
 -Resolves SF bugs 697989, 697988, 697986.
-+Resolves SF <b>bpo-697989</b>, 697988, 697986.
++Resolves <b>bpo-697989</b>, 697988, 697986.
 </pre>
 <hr>
