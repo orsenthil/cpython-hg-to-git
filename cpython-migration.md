@@ -33,6 +33,7 @@ branch and a bookmark cannot have a same name.
     hg bookmark -r 3.3 py-3.3 -f
     hg bookmark -r 3.5 py-3.5 -f
     hg bookmark -r 3.4 py-3.4 -f
+    hg bookmark -r 3.6 py-3.6 -f
     hg bookmark -r 3.2 py-3.2 -f
     hg bookmark -r 2.6 py-2.6 -f
     hg bookmark -r 3.1 py-3.1 -f
@@ -123,6 +124,7 @@ git branch -m py-3.2 3.2
 git branch -m py-3.3 3.3
 git branch -m py-3.4 3.4
 git branch -m py-3.5 3.5
+git branch -m py-3.6 3.6
 git branch -m py-legacy-trunk legacy-trunk
 ```
 
