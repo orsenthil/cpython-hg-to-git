@@ -6,7 +6,7 @@ to git repo.
 ##### hg_git_migrator.py
 
 [hg_git_migrator.py] is a simple tool that can help with migrating any mercurial repository to github. It uses
-mercurial's [hg-git](hg-git.github.io) and automates some steps for easy of use and consistency.
+mercurial's [hg-git](https://bitbucket.org/orsenthil/hg-git) (Patched Version of hg-git) and automates some steps for easy of use and consistency.
 
 ```
 python3.6 hg-git-migrator.py local-mercurial-repository empty-github-url
